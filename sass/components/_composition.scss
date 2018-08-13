@@ -41,4 +41,5 @@
     &:hover &__photo:not(:hover) {
         transform: scale(0.95);
     }
+    // не работает эффект уменьшения элементов, которые не hover
 }
