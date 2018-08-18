@@ -104,22 +104,22 @@ body {
     margin-bottom: 3rem; }
 
 .u-center-text {
-  text-align: center; }
+  text-align: center !important; }
 
 .u-margin-bottom-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-bottom-medium {
-  margin-bottom: 4rem; }
+  margin-bottom: 4rem !important; }
 
 .u-margin-bottom-small {
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1.5rem !important; }
 
 .u-margin-top-big {
-  margin-bottom: 8rem; }
+  margin-bottom: 8rem !important; }
 
 .u-margin-top-huge {
-  margin-bottom: 10rem; }
+  margin-bottom: 10rem !important; }
 
 .bg-video {
   position: absolute;
@@ -135,7 +135,7 @@ body {
     height: 100%;
     object-fit: cover; }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   position: relative;
   display: inline-block;
   padding: 1.5rem 4rem;
@@ -143,7 +143,9 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   border-radius: 10rem;
-  transition: all 0.2s; }
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer; }
 
 .btn:hover {
   transform: translateY(-3px);
@@ -152,7 +154,8 @@ body {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0; }
 
-.btn:active {
+.btn:active, .btn:focus {
+  outline: none;
   transform: translateY(-1px);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
@@ -356,7 +359,8 @@ body {
   background-color: rgba(255, 255, 255, 0.5);
   border-radius: 2px;
   border: none;
-  border-bottom: 3px solid transparent; }
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s; }
   .form__input:focus {
     outline: none;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
@@ -378,6 +382,45 @@ body {
   opacity: 0;
   visibility: hidden;
   transform: translateY(-4rem); }
+
+.form__radio-group {
+  display: inline-block;
+  width: 49%; }
+
+.form__radio-input {
+  display: none; }
+
+.form__radio-label {
+  position: relative;
+  padding-left: 4.5rem;
+  font-size: 1.6rem;
+  cursor: pointer; }
+
+.form__radio-button {
+  position: absolute;
+  left: 0;
+  top: -0.4rem;
+  display: inline-block;
+  height: 3rem;
+  width: 3rem;
+  border: 5px solid #55c57a;
+  border-radius: 50%; }
+  .form__radio-button::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    content: "";
+    height: 1.3rem;
+    width: 1.3rem;
+    background-color: #55c57a;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.2s;
+    opacity: 0; }
+
+.form__radio-input:checked ~ .form__radio-label .form__radio-button::after {
+  opacity: 1; }
 
 .story {
   width: 75%;
