@@ -6,18 +6,30 @@
   box-sizing: inherit; 
 }
 
-@mixin respond-phone {
-  @media (max-width: 600px) { @content };
-}
+
 
 html {
-  // This defines what 1rem is
+  // // This defines what 1rem is.
+  //  1rem  = 10px;
+  //  10px/16px = 62.5%
+
   
   font-size: 62.5%; 
 
-
-  @include respond-phone {
+  @include respond(phone) {
     font-size: 50%;
+  }
+
+  @include respond(tab-port) {
+    font-size: 60%;
+  }
+
+  @include respond(tab-land) {
+    font-size: 70%;
+  }
+
+  @include respond(big-desktop) {
+    font-size: 80%;
   }
 }
 
