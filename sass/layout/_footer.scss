@@ -5,9 +5,22 @@
     color: $color-grey-light-1;
     background-color: $color-grey-dark-3;
 
+    @include respond(tab-port) {
+        padding: 8rem 0;
+     }
+
+     @include respond(phone) {
+         top: 3.5rem;
+         right: 3.5rem;
+      }
+
     &__logo-box {
         text-align: center;
         margin-bottom: 8rem;
+
+        @include respond(tab-port) {
+            margin-bottom: 6rem;
+        }
     }
 
     &__logo {
@@ -20,6 +33,11 @@
         display: inline-block;
         padding-top: 2rem;
         border-top: 1px solid $color-grey-dark;
+
+        @include respond(tab-port) {
+            width: 100%;
+            text-align: center;
+        }
     }
 
     &__list {
@@ -61,6 +79,11 @@
         width: 80%;
         padding-top: 2rem;
         border-top: 1px solid $color-grey-dark;
+
+        @include respond(tab-port) {
+            width: 100%;
+            float: none;
+        }
     }
 
 }
