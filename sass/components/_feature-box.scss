@@ -7,6 +7,10 @@
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
     transition: transform 0.3s;
+
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
     
 
     &__icon {
@@ -20,6 +24,10 @@
         to right, $color-primary-light, $color-primary-dark);
         -webkit-background-clip: text;
         transition: all 0.2s;
+
+        @include respond(tab-port) {
+            margin: 0;
+        }
     }
 
     &:hover {
