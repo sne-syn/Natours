@@ -1,2 +1,2 @@
 # natours
-natours-project
+training-project
